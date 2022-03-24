@@ -49,5 +49,34 @@ return res.status(422).json({error:"Information is missing"})
    })
 })
 
+
+//Signin route//
+router.post('/signin',(req,res)=>{
+    const{email,password} = req.body
+    if(!email || !password){
+       return res.status(422).json({error:"Email or password is required"})
+    }
+    User.findOne({email:email})
+    .then(savedUser=>{
+if(!savedUser){
+return res.status(422).json({error:"Invalid Email or Password"})
+}
+//To compare the password//
+bcrypt.compare(password,savedUser.password)
+.then(doMatch=>{
+    if(doMatch){
+        res.json({message:"You are signed in"})
+    }
+    else{
+        return res.status(422).json({error:"Invalid Email or Password"})
+    }
+})
+.catch(err=>{
+    concole.log(err)
+})
+    })
+})
+
+
 //To export//
 module.exports = router
