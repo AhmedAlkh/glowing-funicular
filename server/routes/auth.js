@@ -8,6 +8,9 @@ const mongoose = require('mongoose')
 const User = mongoose.model("User")
 // Require bcrypt//
 const bcrypt = require('bcryptjs') 
+// Require a token//
+const jwt = require('jsonwebtoken')
+const {JWT_SECRET} = require('../keys')
 
 
 
@@ -65,7 +68,10 @@ return res.status(422).json({error:"Invalid Email or Password"})
 bcrypt.compare(password,savedUser.password)
 .then(doMatch=>{
     if(doMatch){
-        res.json({message:"You are signed in"})
+        // Creating a token for an user, according to an user id//
+        const token = jwt.sign({_id:savedUser._id},JWT_SECRET)
+        res.json({token})
+        //res.json({message:"You are signed in"})//
     }
     else{
         return res.status(422).json({error:"Invalid Email or Password"})
