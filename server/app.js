@@ -9,6 +9,9 @@ const {MONGOURI} = require('./keys')
 
 require('./models/user')
 
+app.use(express.json())
+//Register a router//
+app.use(require('./routes/auth'))
 
 //connect to a database//
 mongoose.connect(MONGOURI,{
