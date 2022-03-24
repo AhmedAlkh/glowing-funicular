@@ -19,8 +19,9 @@ module.exports = (req,res,next)=>{
         const {_id} = payload
         User.findById(_id).then(userdata=>{
             req.user = userdata
-        })
-        // To continue to a next middleware//
+            // To continue to a next middleware//
         next()
+    })
+        
     })
 }
