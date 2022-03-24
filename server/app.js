@@ -7,6 +7,9 @@ const PORT = 5000
 const {MONGOURI} = require('./keys')
 
 
+require('./models/user')
+
+
 //connect to a database//
 mongoose.connect(MONGOURI,{
     useNewUrlParsel:true,
