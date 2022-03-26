@@ -11,7 +11,7 @@ const Post = mongoose.model("Post")
 
 
 // to show all the posts//
-router.get('allpost',(req,res)=>{
+router.get('/allpost',(req,res)=>{
     Post.find()
     // to show the user info //
     .populate("postedBy","_id name")
