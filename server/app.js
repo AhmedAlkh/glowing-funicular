@@ -1,35 +1,39 @@
-//require express//
-const express = require('express')
-//invoke express//
-const app = express()
-const mongoose = require('mongoose')
-const PORT = 5000
-const {MONGOURI} = require('./keys')
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const PORT = 3001;
+const {MONGOURI} = require('./keys');
+
+//require the user Models
+require('./models/user');
+app.use(express.json())
+//use/require the authenticate route
+app.use(require('./routes/auth'))
 
 
-//connect to a database//
-mongoose.connect(MONGOURI,{
-    useNewUrlParsel:true,
-    useUnifiedTopology: true
-})
-mongoose.connection.on('connected',()=>{
-    console.log("connected to mongo")
-})
-
-mongoose.connection.on('error',(err)=>{
-    console.log("connection error",err)
+//connect to the mongoDB
+mongoose.connect(MONGOURI, {
+    useNewUrlParser:true,
+    useUnifiedTopology:true
 })
 
-require('./models/user')
-require('./models/post')
+mongoose.connection.on('connected',()=> {
+    console.log("connected to the MongoDB");
+})
+mongoose.connection.on('error', ()=>{
+    console.log('Error logging on to MongoDB');
+})
 
+//require the Models after the connection is made
+require('./models/user');
+require('./models/posts');
 
 app.use(express.json())
-//Register a router//
+//use/require the authenticate route
 app.use(require('./routes/auth'))
 app.use(require('./routes/post'))
 
 
-app.listen(PORT,()=>{
-    console.log("server is running on",PORT)
+app.listen(PORT, () => {
+    console.log(`server is running on ${PORT}`);
 })
