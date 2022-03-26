@@ -7,9 +7,11 @@ const Post = mongoose.model("Post");
 //creating a post route
 router.post('/createpost',requireLogin,(req,res)=>{
     //deconstruct the request to an object
-    const {title,body} = req.body
-    if(!title || !body) {
-       return res.status(422).json({err:"you must include a title and body"})
+    const {title,body,pic} = req.body
+    
+    if(!title || !body || !pic) {
+        console.log(title,body, pic);
+       return res.status(422).json({err:"you must include a title,body and pic"})
     }
     //console.log(req.body)
     //res.send("ok")
@@ -18,6 +20,7 @@ router.post('/createpost',requireLogin,(req,res)=>{
     const post = new Post({
         title,
         body,
+        photo:pic,
         postedBy:req.user
     })
 

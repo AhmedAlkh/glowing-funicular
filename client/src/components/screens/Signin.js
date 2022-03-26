@@ -27,6 +27,8 @@ const Login = () => {
             if(data.error) {
                 M.toast({html:data.error,classes:"red"});
             } else {
+                localStorage.setItem("jwt",data.token)
+                localStorage.setItem("user",JSON.stringify(data.user))
                 M.toast({html:"Signed in Successfully", classes:"green"})
                 navigate('/');
             }
