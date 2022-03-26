@@ -40,3 +40,10 @@ a {
   height: max-content;
   margin: 26px auto;
 }
+
+#toast-container{
+  right:25% !important;
+  left:25% !important;
+  width: 50% !important;
+  top: 55% !important;
+}
