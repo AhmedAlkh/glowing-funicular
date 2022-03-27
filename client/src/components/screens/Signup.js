@@ -64,7 +64,7 @@ const Signup = () => {
         </button>
         
     </div>
-    <Link to="/login">Already a user? Click here to sign in</Link>
+    <Link to="/signin">Already a user? Click here to sign in</Link>
   </div>
     </div>
     );
