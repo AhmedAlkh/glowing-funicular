@@ -33,7 +33,7 @@ router.post('/createpost',requireLogin,(req,res)=>{
 })
 
 //get all posts
-router.get('/allposts',(req,res)=>{
+router.get('/allposts',requireLogin,(req,res)=>{
     //findMany
     Post.find()
     .populate("postedBy","_id name")
