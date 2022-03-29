@@ -37,6 +37,7 @@ router.get('/allposts',requireLogin,(req,res)=>{
     //findMany
     Post.find()
     .populate("postedBy","_id name")
+    .populate("comments.postedBy","_id name")    
     .then(posts=>{
         res.json({posts})
     })
@@ -99,6 +100,7 @@ router.put('/comment',requireLogin,(req,res)=>{
         new:true
     })
     .populate("comments.postedBy","_id name")
+    .populate("postedBy","_id name")
     .exec((err,result)=>{
         if(err){
             return res.status(422).json({error:err})
@@ -107,6 +109,26 @@ router.put('/comment',requireLogin,(req,res)=>{
         }
     })
 })
+
+//delete posts
+router.delete('/deletepost/:postId',requireLogin,(req,res)=>{
+    Post.findOne({_id:req.params.postId})
+    .populate("postedBy","_id")
+    .exec((err,post)=>{
+        if(err || !post){
+            return res.status(422).json({error:err})
+        }
+        if(post.postedBy._id.toString() === req.user._id.toString()){
+              post.remove()
+              .then(result=>{
+                  res.json(result)
+              }).catch(err=>{
+                  console.log(err)
+              })
+        }
+    })
+})
+
 
 
 
