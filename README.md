@@ -56,9 +56,9 @@ Memestagram is a visual platform. The purpose of this application is to enable u
  Memestagram is a great application that combines technology and photography together.  The app is Mobile friendly and can be used from anywhere with an access to Internet. The purpose is to use is as a portfolio, either personal or business, to share with the audience you like/want. 
  
 In order to login:
-Create: Name, Email, password, upload a pic, then a final step - Sign up (saved successfully)
+Create: Name, Email, Password, Upload a picture, Final step - Sign up (saved successfully).
 
-When you are logging in - you will see signed in success notification
+When you are logging in - you will see signed in success notification.
 
 Dashboard: 
 This is where you can see all the posts of the users.
@@ -67,7 +67,7 @@ You will be able to create a new post:
 1) Title
 2) Body
 3) Upload image
-Submit post
+4) Submit post
 ** The new post will show up on your dashboard (top) **
 
 
@@ -75,7 +75,7 @@ You will be able to comment on other users posts.
 
 You can like or unlike a post as well.
 
-You can also view your own profile : Profile pic, Full name and email
+You can also view your own profile : Profile picture, Full name and Email.
 
 What you will see:
 1) How many posts
@@ -115,7 +115,7 @@ Use your new credentials to login.
     
   ## Contributing
   
-  Create issues and pull requests, link any external documentation and make sure to use new branches and good commit messages once you adding additional information to this repo
+  Create issues and pull requests, link any external documentation and make sure to use new branches and good commit messages once you adding additional information to this repo.
   
   ## Applications being used 
   
