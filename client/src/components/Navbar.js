@@ -11,11 +11,12 @@ const NavBar = ()=> {
       return [
         <li><Link to="/profile">My Profile</Link></li>,
         <li><Link to="/createpost">Create Post</Link></li>,
+        <li><Link to="/myfollowerspost">My Followers Content</Link></li>,
         <li>
           <button className="btn waves-effect waves-light red" onClick={()=>{
             localStorage.clear()
             dispatch({type:"CLEAR"})
-            navigate.push('/signin')
+            navigate('/signin')
 
            }}
            >

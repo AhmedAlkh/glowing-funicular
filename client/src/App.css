@@ -52,3 +52,11 @@ a {
   width: 50% !important;
   top: 55% !important;
 }
+
+h5 {
+  padding: 5px;
+}
+
+.material-icons:hover{
+  cursor:pointer;
+}

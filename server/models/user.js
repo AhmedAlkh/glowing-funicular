@@ -15,6 +15,11 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    pic: {
+        type: String,
+        default: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBad_Luck_Brian&psig=AOvVaw2JFP2OUtexYxQYbAVPuyj0&ust=1648608770349000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPijtbSo6vYCFQAAAAAdAAAAABAD"
+    },
+
     followers:[{type:ObjectId,ref:"User"}],
     following:[{type:ObjectId,ref:"User"}]
 })

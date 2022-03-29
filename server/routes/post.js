@@ -45,6 +45,19 @@ router.get('/allposts',requireLogin,(req,res)=>{
         console.log(err);
     })
 })
+//get all posts from subscribed users if they are in your following list
+router.get('/getsubpost',requireLogin,(req,res)=>{
+    //findMany
+    Post.find({postedBy:{$in:req.user.following}})
+    .populate("postedBy","_id name")
+    .populate("comments.postedBy","_id name")    
+    .then(posts=>{
+        res.json({posts})
+    })
+    .catch(err=>{
+        console.log(err);
+    })
+})
 
 //list all the posts created by a single user for profile page
 router.get('/myposts',requireLogin,(req,res)=>{
