@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     pic: {
         type: String,
-        default: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBad_Luck_Brian&psig=AOvVaw2JFP2OUtexYxQYbAVPuyj0&ust=1648608770349000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPijtbSo6vYCFQAAAAAdAAAAABAD"
+        default: "https://en.wikipedia.org/wiki/Bad_Luck_Brian#/media/File:Bad_Luck_Brian.jpg"
     },
 
     followers:[{type:ObjectId,ref:"User"}],
