@@ -16,6 +16,8 @@ const Profile = () => {
             setPics(result.myposts)
         })
      },[])
+
+     console.log(state)
     return (
         <div style={{maxWidth:"550px", margin:"0px auto"}}>
             <div style={{
@@ -30,12 +32,14 @@ const Profile = () => {
                     src="https://images.unsplash.com/photo-1487528001669-63c47a53fd39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60"/>
                 </div>
                 <div>
-                    <h4>{state?state.name:"loading"}</h4>
-                    <div style={{display:"flex", justifyContent: "space-between", width:"110%"}}>
-                        <h6>XX Posts</h6>
-                        <h6>XX Followers</h6>
-                        <h6>XX Following</h6>
-                    </div>
+                   <h4>{state?state.name:"loading"}</h4>
+                   <h5>{state?state.email:"loading"}</h5>
+                   <div style={{display:"flex",justifyContent:"space-between",width:"108%"}}>
+                       <h6>{mypics.length} posts</h6>
+                       <h6>{state?state.followers.length:"0"} followers</h6>
+                       <h6>{state?state.following.length:"0"} following</h6>
+            
+                   </div>
                 </div>
             </div>
 

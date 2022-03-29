@@ -28,7 +28,7 @@ const Routing = ()=>{
   }, [])
   return(
     <Routes>
-      <Route exact path="/" element={<Home />} />
+  <Route exact path="/" element={<Home />} />
   <Route path="/signin" element={<Signin />} />
   <Route path="/signup" element={<Signup />} />
   <Route exact path="/profile" element={<Profile />} />
