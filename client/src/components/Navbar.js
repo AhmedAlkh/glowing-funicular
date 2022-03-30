@@ -16,8 +16,8 @@ const NavBar = ()=> {
           <button className="btn waves-effect waves-light red" onClick={()=>{
             localStorage.clear()
             dispatch({type:"CLEAR"})
-            navigate.push('/signin')
-
+            navigate('/signin')
+            // changed from navigate.push to just navigate. Solved typeError.
            }}
            >
                 Signout
