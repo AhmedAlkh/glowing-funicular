@@ -1,10 +1,6 @@
 # memestagram
-This is up to date. as of 03/26/22
-sign up, login, create post, and view all posts from home screen are done
-context is used for navigation bar
-context is used for home screen display
 
-when pulling from main, follow these steps:
+When pulling from main, follow these steps:
 
 1) clone the repo
 2) cd command into that repo
@@ -17,7 +13,7 @@ when pulling from main, follow these steps:
 once both packages are installed, you can turn on both servers from each folder. CD to client and type npm start, and then navigate to server folder and type npm start
 
 
-# On-Demand-CRM
+
 ## Heroku URL
 https://memestagram1.herokuapp.com/signin
 
@@ -46,11 +42,14 @@ Memestagram is a visual platform. The purpose of this application is to enable u
   
   Please install the necessary dependencies:
   - Express
-  - 
-  - 
-  - 
-  - 
-  - 
+  - bcryptjs
+  - jsonwebtoken
+  - mongoose
+  - nodemailer
+  - nodemailer-sendgrid-transport
+  - nodemon
+  - Cloudinary
+
   
   ## About
  Memestagram is a great application that combines technology and photography together.  The app is Mobile friendly and can be used from anywhere with an access to Internet. The purpose is to use is as a portfolio, either personal or business, to share with the audience you like/want. 
