@@ -52,7 +52,7 @@ Memestagram is a visual platform. The purpose of this application is to enable u
 
   
   ## About
- Memestagram is a great application that combines technology and photography together.  The app is Mobile friendly and can be used from anywhere with an access to Internet. The purpose is to use is as a portfolio, either personal or business, to share with the audience you like/want. 
+ Memestagram is a great application that combines technology and memes together.  The app is Mobile friendly and can be used from anywhere with an access to Internet. The purpose is to use is as a portfolio, either personal or business, to share with the audience you like/want. 
  
 In order to login:
 Create: Name, Email, Password, Upload a picture, Final step - Sign up (saved successfully).
