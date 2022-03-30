@@ -122,5 +122,5 @@ Use your new credentials to login.
   
   ## Questions
   
-  If you have any questions about this project, please contact me via email at shaynemganness@gmail.com, evangelodamianos@gmail.com, alkhatib_ahmed1995@hotmail.com, 
+  If you have any questions about this project, please contact me via email at shaynemganness@gmail.com, alkhatib_ahmed1995@hotmail.com, 
   elbandingo@protonmail.com and victoria.tsitskishvili@gmail.com 
