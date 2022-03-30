@@ -6,12 +6,24 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {JWT_SECRET} = require('../config/keys');
 const requireLogin = require('../middleware/requireLogin')
+// This is for email section
+// const nodemailer = require('nodemailer')
+// const sendgridTransport = require('nodemailer-sendgrid-transport')
 
 //how to validate someone by token using middleware
 //router.get('/protected', requireLogin, (req,res)=>{
     //verify a user that they are carrying the appropriate token
    // res.send("hello user")
 //})
+
+// API key for emails
+// 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
+
+// const transporter = nodemailer.createTransport(sendgridTransport({
+//     auth:{
+//         api_key:"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"
+//     }
+// }))
 
 
 
@@ -40,6 +52,13 @@ router.post('/signup',(req,res)=> {
             //call the user object to save, then respond with json that its saved. catch any errors in console.
             user.save()
             .then(userData=>{
+                // This is for email section
+                // transporter.sendMail({
+                //     to:user.email,
+                //     from:"no-reply@memestagram.com",
+                //     subject: "signup successful",
+                //     html: "<h1>Welcome to Memestagram</h1>"
+                // })
                 res.json({message:"saved successfully"})
             })
             .catch(err=>{
